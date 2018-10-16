@@ -1,6 +1,6 @@
 //Write a JavaScript program to display the current day and time.
 const date = new Date();
-
+ 
 console.log(date);
 
 //Write a JavaScript program to convert a number to a string.
