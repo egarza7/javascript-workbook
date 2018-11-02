@@ -1,5 +1,20 @@
 'use strict';
 
+//hand1 enters move, hand2 enters move
+//check to see is move is valid
+
+//if hand1 enters rock and hand2 enters rock, return 'tie'
+//if hand1 enters rock and hand2 enters paper, return 'hand2 wins'
+//if hand1 enters rock and hand2 enters scissors, return 'hand1 wins'
+
+//if hand1 enters paper and hand2 enters rock, return 'hand1 wins'
+//if hand1 enters paper and hand2 enters paper, return 'tie'
+//if hand1 enters paper and hand2 enters scissors, return 'hand2 wins'
+
+//if hand1 enters scissors and hand2 enters rock, return 'hand2 wins'
+//if hand1 enters scissors and hand2 enters paper, return 'hand1 wins'
+//if hand1 enters scissors and hand2 enters scissors, return 'tie'
+
 const assert = require('assert');
 const readline = require('readline');
 const rl = readline.createInterface({
@@ -9,9 +24,33 @@ const rl = readline.createInterface({
 
 
 function rockPaperScissors(hand1, hand2) {
-
-  // Write code here
-
+  if(hand1 === hand2){
+    return "The result is a tie!";
+  }
+   else if(hand1 === "rock"){
+    if(hand2 === "scissors"){
+      return "Hand 1 wins!";
+    }
+    else {
+      return "Hand 2 wins!";
+      }
+  }
+  else if(hand1==="paper"){
+    if(hand2==="rock"){
+      return "Hand 1 wins!";
+    }
+    else {
+      return "Hand 2 wins!";
+    }
+  }
+  else if (hand1 === "scissors") {
+    if (hand2 === "paper") {
+      return "Hand 1 wins!";
+    }
+    else {
+      return "Hand 2 wins!";
+    }
+  }
 }
 
 function getPrompt() {
