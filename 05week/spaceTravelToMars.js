@@ -10,6 +10,41 @@ let jobTypes = {
 };
 
 // Your code here
+class CrewMember {
+  constructor(name, job, specialSkill){
+    this.name = name;
+    this.job = job;
+    this.specialSkill = specialSkill;
+    this.assignedShip = assignedShip;
+  }
+
+  enterShip = (assignedShip) => {
+    this.assignedShip = assignedShip
+  }
+
+}
+
+class Ship {
+  constructor(name, type, ability){
+    this.name = name;
+    this.type = type;
+    this.ability = ability;
+    this.crew = [];
+  }
+
+  missionStatement = (ability) => {
+    console.log(this.ability)
+  }
+
+}
+
+
+const crewMember1 = new CrewMember("Rick Martinez", "pilot", "chemistry");
+const crewMember2 = new CrewMember("Commander Lewis", "commander", "geology");
+crewMember1.assignedShip("nav")
+console.log(crewMember1);
+console.log(crewMember2);
+
 
 //tests
 if (typeof describe === 'function'){
