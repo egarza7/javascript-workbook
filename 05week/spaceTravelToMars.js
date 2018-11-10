@@ -15,11 +15,11 @@ class CrewMember {
     this.name = name;
     this.job = job;
     this.specialSkill = specialSkill;
-    this.assignedShip = assignedShip;
+    this.ship = null;
   }
-
-  enterShip = (assignedShip) => {
-    this.assignedShip = assignedShip
+  enterShip(ship) {
+    this.ship = ship
+    ship.crew.push(this)
   }
 
 }
@@ -31,19 +31,26 @@ class Ship {
     this.ability = ability;
     this.crew = [];
   }
-
-  missionStatement = (ability) => {
-    console.log(this.ability)
+  missionStatement(){
+    if(this.crew.length > 0){
+      return this.ability
+    }else {
+      return "Can't perform a mission yet."
+    }
   }
-
 }
 
 
 const crewMember1 = new CrewMember("Rick Martinez", "pilot", "chemistry");
 const crewMember2 = new CrewMember("Commander Lewis", "commander", "geology");
-crewMember1.assignedShip("nav")
-console.log(crewMember1);
-console.log(crewMember2);
+
+const mav = new Ship('Mars Ascent Vehicle', 'MAV', 'Ascend into low orbit');
+const hermes = new Ship('Hermes', 'Main Ship', 'Interplanetary Space Travel');
+
+crewMember1.enterShip(mav);
+crewMember2.enterShip(hermes);
+console.log(mav)
+console.log(hermes)
 
 
 //tests
